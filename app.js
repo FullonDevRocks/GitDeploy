@@ -14,6 +14,8 @@ const Stellar_accounts = require("./accounts.json");
 const util = require("util")
 const server = new Stellar.Server("https://horizon-testnet.stellar.org")
 const fileName = "Stellar_accounts.json"
+var myPublicKey = new String;
+var mySecretKey = new String;
 // Static Files
 app.use(express.static('public'))
 app.use("/css", express.static(__dirname + 'public/css'))
@@ -27,11 +29,35 @@ app.set('view engine', 'ejs')
 
 
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('reg')
 })
 
 app.get('/Account', (req, res) => {
     res.render('inner-page')
+})
+
+app.get('/SendMoney', (req, res) => {
+    res.render('send')
+})
+
+app.get('/Track', (req, res) => {
+    res.render('track')
+})
+
+app.get('/About', (req, res) => {
+    res.render('about')
+})
+
+app.get('/Reg', (req, res) => {
+    res.render('pages-login')
+})
+
+app.get('/Help', (req, res) => {
+    res.render('help')
+})
+
+app.get('/Contact', (req, res) => {
+    res.render('contact')
 })
 
 app.get('/signUp', (req, res) => {

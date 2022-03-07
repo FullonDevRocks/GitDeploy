@@ -27,31 +27,5 @@
         </div>
       </section>
 </body>
-<script type="text/javascript" >
-  function myFunction(){
-    const request = new XMLHttpRequest;
-    var username = document.getElementById("NameTag").value
-    var Password = document.getElementById("PasswordTag").value
-    console.log("123",username, Password)
-    if (username.length > 0 && Password.length > 0){
-      request.open("GET", "http://127.0.0.1:3000/signUp?user=" + username + "&pass=" + Password);
-      request.send();
-      request.onload = () => {
-        if (request.status == 200) {
-          console.log(request.response)
-        } else {
-          console.log(`error ${request.status}`)
-        }
-      }
-    } else {
-      document.getElementById("resultText").innerHTML = "Please Input First"
 
-    }
-    
-    console.log('button was clicked');
-  }
-  function makeTransaction() {
-
-  }
-</script>
 </html>
